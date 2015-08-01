@@ -14,11 +14,6 @@
     <link href="css/inCode.css" rel="stylesheet" type="text/css" />
     <link href="css/style.consola.css" rel="stylesheet" type="text/css" />
 
-
-
-
-
-
 </head>
 <body class="">
     <div class="grupo">
@@ -71,12 +66,11 @@ write('La suma es '+c);
 
     <script type="text/javascript">
 
-        $code = new inCode( $('.editor textarea'), $('.consola'), $('.tools') );
+
 
 
         window.onload = function() {
-              var te = document.getElementById("code");
-              window.editor = CodeMirror.fromTextArea(te, {
+              var editor = CodeMirror.fromTextArea( document.getElementById("code") , {
                 mode: "javascript",
                 lineNumbers: true,
                 lineWrapping: true,
@@ -86,6 +80,7 @@ write('La suma es '+c);
                 //gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
               });
 
+              $code = new inCode( editor, $('.consola'), $('.tools') );
         }
     </script>
 

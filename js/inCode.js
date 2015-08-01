@@ -1,4 +1,4 @@
-function inCode($editor, $consola, $btns, $options){
+function inCode(editor, $consola, $btns, $options){
     var debug = true;
 
     $run = $btns.find('.ejecutar');
@@ -6,13 +6,17 @@ function inCode($editor, $consola, $btns, $options){
     $run.on('click',function(){
         //alert($textarea.val());
         init();
-        eval($editor.val());
-    })
+        try {
+            eval(editor.getValue());
+        }catch(err) {
+            writeln(err.message, 'error');
+        }
+    });
 
     function init(){
         var fecha = new Date();
         reset();
-        writeln(fecha.getTime());
+        writeln(fecha.getTime(),'date');
     };
 
     function reset(){
