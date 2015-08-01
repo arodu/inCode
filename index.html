@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>inCode</title>
+
+    <!-- ED-GRID -->
+    <link href="vendors/ed-grid/ed-grid.css" rel="stylesheet" type="text/css" />
+
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="vendors/codemirror/lib/codemirror.css">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/inCode.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.consola.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+</head>
+<body class="">
+    <div class="grupo">
+
+        <header>
+            <h1>inCode</h1>
+        </header>
+
+        <main>
+            <div class="grupo movil-tabla">
+                <div class="editor caja movil-50">
+                    <form>
+                        <div class="tools">
+                            <input type="button" value="Run &gt;" class="ejecutar" />
+                        </div>
+                        <div>
+                            <textarea id="code" name="code" class="caja">
+var a;
+var b;
+var c;
+
+a = 1;
+b = 4;
+
+c = a + b;
+
+write('La suma es '+c);
+                            </textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="consola caja movil-50">
+
+
+
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="vendors/jquery/jquery-2.1.4.min.js"></script>
+
+    <!-- CodeMirror -->
+    <script src="vendors/codemirror/lib/codemirror.js"></script>
+    <script src="vendors/codemirror/mode/javascript/javascript.js"></script>
+
+    <script type="text/javascript" src="js/inCode.js"></script>
+
+    <script type="text/javascript">
+
+        $code = new inCode( $('.editor textarea'), $('.consola'), $('.tools') );
+
+
+        window.onload = function() {
+              var te = document.getElementById("code");
+              window.editor = CodeMirror.fromTextArea(te, {
+                mode: "javascript",
+                lineNumbers: true,
+                lineWrapping: true,
+                showCursorWhenSelecting: true,
+                //extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+                //foldGutter: true,
+                //gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+              });
+
+        }
+    </script>
+
+</body>
+</html>
