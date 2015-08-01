@@ -2,3 +2,12 @@ div.consola{
     background-color: #000;
     color: #FFFF00;
 }
+.consola .date{
+    color: #0F0;
+}
+.consola .error{
+    color: #F00;
+}
+.consola .input-value{
+    font-style: italic;
+}

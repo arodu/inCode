@@ -26,31 +26,32 @@
             <div class="grupo movil-tabla">
                 <div class="editor caja movil-50">
                     <form>
-                        <div class="tools">
-                            <input type="button" value="Run &gt;" class="ejecutar" />
-                        </div>
                         <div>
-                            <textarea id="code" name="code" class="caja">
-var a;
+                            <textarea id="code" name="code" class="caja">var a;
 var b;
 var c;
 
-a = 1;
-b = 4;
+a = read("Ingrese valor de A: ");
+b = read("Ingrese valor de B: ");
 
-c = a + b;
+c = (a + b) * (a-b);
 
-write('La suma es '+c);
-                            </textarea>
+writeln('El Resultado es '+c);
+
+write('La suma es ');
+write(a+b);
+
+writeln("");
+writeln("");
+
+writeln("-- Fin del programa --");</textarea>
+                        </div>
+                        <div class="tools">
+                            <input type="button" value="Run &gt;" class="ejecutar" />
                         </div>
                     </form>
                 </div>
-                <div class="consola caja movil-50">
-
-
-
-
-                </div>
+                <div class="consola caja movil-50"></div>
             </div>
         </main>
     </div>
@@ -70,6 +71,7 @@ write('La suma es '+c);
 
 
         window.onload = function() {
+
               var editor = CodeMirror.fromTextArea( document.getElementById("code") , {
                 mode: "javascript",
                 lineNumbers: true,
