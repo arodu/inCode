@@ -17,34 +17,30 @@
 </head>
 <body class="">
     <div class="grupo">
-
-        <header>
-            <h1>inCode</h1>
-        </header>
-
-        <main>
+        <div class="editor caja total">
+            <header>
+                <h1>inCode</h1>
+            </header>
+        </div>
+        <div class="caja total">
             <div class="grupo movil-tabla">
                 <div class="editor caja movil-50">
                     <form>
                         <div>
-                            <textarea id="code" name="code" class="caja">var a;
-var b;
-var c;
+                            <textarea id="code" name="code" class="caja">var a = read("Ingrese el valor de A: ");
+var b = read("Ingrese el valor de B: ");
+var c = read("Ingrese el valor de C: ");
 
-a = read("Ingrese valor de A: ");
-b = read("Ingrese valor de B: ");
+var x1, x2, y;
 
-c = (a + b) * (a-b);
+y = ((b*b) - (4*a*c));
 
-writeln('El Resultado es '+c);
+x1 = (-b + Math.sqrt(y))/(2*a);
+x2 = (-b - Math.sqrt(y))/(2*a);
 
-write('La suma es ');
-write(a+b);
-
-writeln("");
-writeln("");
-
-writeln("-- Fin del programa --");</textarea>
+writeln("x1 = "+x1);
+writeln("x2 = "+x2);
+</textarea>
                         </div>
                         <div class="tools">
                             <input type="button" value="Run &gt;" class="ejecutar" />
@@ -53,7 +49,13 @@ writeln("-- Fin del programa --");</textarea>
                 </div>
                 <div class="consola caja movil-50"></div>
             </div>
-        </main>
+        </div>
+
+        <div class="caja total">
+            <footer>
+                <small><a href="https://github.com/arodu/inCode">https://github.com/arodu/inCode</a> 2015</small>
+            </footer>
+        </div>
     </div>
 
     <!-- jQuery -->
@@ -66,10 +68,6 @@ writeln("-- Fin del programa --");</textarea>
     <script type="text/javascript" src="js/inCode.js"></script>
 
     <script type="text/javascript">
-
-
-
-
         window.onload = function() {
 
               var editor = CodeMirror.fromTextArea( document.getElementById("code") , {

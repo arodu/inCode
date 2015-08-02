@@ -4,22 +4,30 @@ function inCode(editor, $consola, $btns, $options){
     $run = $btns.find('.ejecutar');
 
     $run.on('click',function(){
-        //alert($textarea.val());
-        init();
         try {
+            init();
             eval(editor.getValue());
+            end();
         }catch(err) {
-            writeln(err.message, 'error');
+            msg = err.message + "&nbsp;&nbsp;&nbsp;(Linea " + err.lineNumber + ")";
+            _debug(err);
+            writeln(msg, 'error');
         }
-        _debug("Ejecutar codigo: ");
     });
 
     function init(){
-        var fecha = new Date();
         reset();
-        writeln(fecha,'date');
-        _debug("Inicido consola");
+        //var fecha = new Date();
+        //writeln(fecha,'date');
+        _debug("Inicio de ejecucion de codigo");
     };
+
+    function end(){
+        ln();
+        var fecha = new Date();
+        writeln('---  '+fecha+'  ---','date');
+        _debug("Fin de ejecucion de codigo");
+    }
 
     function reset(){
         $consola.html("");
@@ -45,8 +53,12 @@ function inCode(editor, $consola, $btns, $options){
     };
 
     function writeln(msg, type){
-        write( msg+"<br/>", type );
-        //write();
+        write( msg, type );
+        ln();
+    };
+
+    function ln(){
+        $consola.append("<br/>");
     };
 
     function read(msg, default_value){

@@ -4,6 +4,8 @@ div.consola{
 }
 .consola .date{
     color: #0F0;
+    font-size: 0.8em;
+    font-style: italic;
 }
 .consola .error{
     color: #F00;
