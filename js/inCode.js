@@ -9,7 +9,7 @@ function inCode(editor, $consola, $btns, $options){
         try {
             eval(editor.getValue());
         }catch(err) {
-            writeln(err.message, 'error');
+            writeln(err.name + ": " + err.message + ' Línea: '+err.lineNumber);//se garego un comando de linea catch para indicar la liena donde da error
         }
     });
 
