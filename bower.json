@@ -1,0 +1,28 @@
+{
+  "name": "inCode",
+  "version": "0.0.1-dev",
+  "authors": [
+    "Alberto Rodriguez <arod.unerg@gmail.com>"
+  ],
+  "description": "Interprete de comandos JavaScript para el navegador",
+  "main": "index.html",
+  "keywords": [
+    "educativo",
+    "javascript",
+    "interprete"
+  ],
+  "license": "LGPL",
+  "homepage": "https://github.com/arodu/inCode",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "codemirror": "*",
+    "bootstrap": "*"
+  }
+}
