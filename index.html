@@ -1,30 +1,83 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
     <title>inCode</title>
 
-    <!-- ED-GRID -->
-    <link href="vendors/ed-grid/ed-grid.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar.css" rel="stylesheet">
 
     <!-- CodeMirror -->
     <link rel="stylesheet" href="vendors/codemirror/lib/codemirror.css">
 
+    <!-- inCode -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/inCode.css" rel="stylesheet" type="text/css" />
     <link href="css/style.consola.css" rel="stylesheet" type="text/css" />
 
-</head>
-<body class="">
-    <div class="grupo">
-        <div class="editor caja total">
-            <header>
-                <h1>inCode</h1>
-            </header>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+              <span class="glyphicon glyphicon-align-left"></span>
+              inCode
+          </a>
+
+          <span class="navbar-text">sin nombre...</span>
+
+          <input type="button" value="Ejecutar" class="ejecutar btn btn-primary navbar-btn" />
+
         </div>
-        <div class="caja total">
-            <div class="grupo movil-tabla">
-                <div class="editor caja movil-50">
+        <div id="navbar" class="collapse navbar-collapse">
+
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about">Guardar...</a></li>
+            <li><a href="#contact">Cargar...</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+    <div class="container-fluid">
+        <div class="row">
+
+                <!-- Editor -->
+                <div class="col-md-6">
                     <form>
                         <div>
                             <textarea id="code" name="code" class="caja">var a = read("Ingrese el valor de A: ");
@@ -47,24 +100,34 @@ writeln("x2 = "+x2);
                         </div>
                     </form>
                 </div>
-                <div class="consola caja movil-50"></div>
-            </div>
+
+                <!-- Consola -->
+                <div class="consola col-md-6"></div>
         </div>
 
-        <div class="caja total">
-            <footer>
-                <small><a href="https://github.com/arodu/inCode">https://github.com/arodu/inCode</a> 2015</small>
-            </footer>
-        </div>
+
     </div>
 
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">
+            <a href="https://github.com/arodu/inCode" target="_blank">https://github.com/arodu/inCode</a> 2015
+        </p>
+      </div>
+    </footer>
+
+
     <!-- jQuery -->
-    <script type="text/javascript" src="vendors/jquery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- CodeMirror -->
     <script src="vendors/codemirror/lib/codemirror.js"></script>
     <script src="vendors/codemirror/mode/javascript/javascript.js"></script>
 
+    <!-- inCode -->
     <script type="text/javascript" src="js/inCode.js"></script>
 
     <script type="text/javascript">
@@ -84,5 +147,5 @@ writeln("x2 = "+x2);
         }
     </script>
 
-</body>
+  </body>
 </html>
