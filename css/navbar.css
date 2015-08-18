@@ -37,3 +37,8 @@ body > .container-fluid {
 code {
   font-size: 80%;
 }
+
+.form-text-navbar{
+    border: 0px none;
+    background: none;
+}
